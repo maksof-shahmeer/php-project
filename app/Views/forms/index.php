@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Sign up / Login Form</title>
+  <title>Login Form</title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -89,24 +89,28 @@ button:hover{
 	height: 550px;
 	background: #eee;
 	border-radius: 60% / 10%;
-	transform: translateY(-180px);
+	transform: translateY(-500px);
 	transition: .8s ease-in-out;
 	text-align: center;
 }
 .login label{
 	color: #573b8a;
-	transform: scale(.6);
+	transform: scale(1);
+}
+.signup label{
+	transform: scale(0.6);
 }
 
 #chk:checked ~ .login{
-	transform: translateY(-500px);
+	transform: translateY(-175px);
 }
 #chk:checked ~ .login label{
-	transform: scale(1);	
+	transform: scale(0.6);	
 }
 #chk:checked ~ .signup label{
-	transform: scale(.6);
+	transform: scale(1);
 }
+
 </style>
 </head>
 <body>
@@ -114,21 +118,21 @@ button:hover{
 		<input type="checkbox" id="chk" aria-hidden="true">
 
 			<div class="signup">
-				<form action="">
+			<form action="<?= base_url('/confirm_email') ?>" method='post'>
 					<label for="chk" aria-hidden="true">Sign up</label>
 					<input type="text" name="txt" placeholder="User name" required="">
-					<input type="email" name="email" placeholder="Email" required="">
+					<input type="email" name="signemail" placeholder="Email" required="">
 					<input type="password" name="pswd" placeholder="Password" required="">
-					<input type="password" name="pswd" placeholder="Confirm Password" required="">
+					<input type="password" name="confirmpswd" placeholder="Confirm Password" required="">
 					<button>Sign up</button>
 				</form>
 			</div>
 
 			<div class="login">
-				<form>
+			<form action="<?= base_url('/dashboard') ?>" method='post'>
 					<label for="chk" aria-hidden="true">Login</label>
 					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
+					<input type="password" name="loginpswd" placeholder="Password" required="">
 					<a href="http://">Forget Password</a>
 					<button>Login</button>
 				</form>

@@ -1,0 +1,137 @@
+CRITICAL - 2023-10-18 06:24:21 --> Call to undefined method App\Models\UserModel::insert_id
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\SignupController.php(27): CodeIgniter\Model->__call('insert_id', [])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2023-10-18 06:31:38 --> Call to undefined method App\Models\UserModel::insert_id
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\SignupController.php(26): CodeIgniter\Model->__call('insert_id', [])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2023-10-18 06:42:41 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::fetch_assoc()
+in APPPATH\Models\UserModel.php on line 45.
+ 1 APPPATH\Controllers\SignupController.php(27): App\Models\UserModel->get_user_by_email('test@gmail.com')
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2023-10-18 06:43:03 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::fetch_assoc()
+in APPPATH\Models\UserModel.php on line 45.
+ 1 APPPATH\Controllers\SignupController.php(27): App\Models\UserModel->get_user_by_email('test@gmail.com')
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2023-10-18 06:48:43 --> Undefined variable $query
+in APPPATH\Models\UserModel.php on line 47.
+ 1 APPPATH\Models\UserModel.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $query', 'C:\\xampp\\htdocs\\codeigniter\\app\\Models\\UserModel.php', 47)
+ 2 APPPATH\Controllers\SignupController.php(27): App\Models\UserModel->get_user_by_email('test2@gmail.com')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2023-10-18 07:19:46 --> Attempt to read property "token" on array
+in APPPATH\Controllers\SignupController.php on line 45.
+ 1 APPPATH\Controllers\SignupController.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "token" on array', 'C:\\xampp\\htdocs\\codeigniter\\app\\Controllers\\SignupController.php', 45)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->token_verification()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+ERROR - 2023-10-18 07:46:24 --> mysqli_sql_exception: Unknown column 'id' in 'where clause' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE users SE...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE users SE...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE users SE...')
+#3 C:\xampp\htdocs\codeigniter\app\Models\UserModel.php(52): CodeIgniter\Database\BaseConnection->query('UPDATE users SE...')
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\SignupController.php(45): App\Models\UserModel->token_verify('37', '414d7af0ce03a84...')
+#5 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(919): App\Controllers\SignupController->token_verification()
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2023-10-18 07:46:24 --> Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 APPPATH\Models\UserModel.php(52): CodeIgniter\Database\BaseConnection->query('UPDATE users SET verified_user = 1 WHERE id = 37 AND token LIKE \'414d7af0ce03a8465416f5c0f1ac4bfb\'')
+ 2 APPPATH\Controllers\SignupController.php(45): App\Models\UserModel->token_verify('37', '414d7af0ce03a8465416f5c0f1ac4bfb')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->token_verification()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+ERROR - 2023-10-18 07:49:02 --> mysqli_sql_exception: Unknown column 'id' in 'where clause' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE users SE...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE users SE...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE users SE...')
+#3 C:\xampp\htdocs\codeigniter\app\Models\UserModel.php(52): CodeIgniter\Database\BaseConnection->query('UPDATE users SE...')
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\SignupController.php(46): App\Models\UserModel->token_verify('37', '414d7af0ce03a84...')
+#5 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(919): App\Controllers\SignupController->token_verification()
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2023-10-18 07:49:02 --> Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 APPPATH\Models\UserModel.php(52): CodeIgniter\Database\BaseConnection->query('UPDATE users SET verified_user = 1 WHERE id = 37 AND token LIKE \'414d7af0ce03a8465416f5c0f1ac4bfb\'')
+ 2 APPPATH\Controllers\SignupController.php(46): App\Models\UserModel->token_verify('37', '414d7af0ce03a8465416f5c0f1ac4bfb')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->token_verification()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+ERROR - 2023-10-18 07:49:39 --> mysqli_sql_exception: Unknown column 'id' in 'where clause' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE users SE...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE users SE...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE users SE...')
+#3 C:\xampp\htdocs\codeigniter\app\Models\UserModel.php(52): CodeIgniter\Database\BaseConnection->query('UPDATE users SE...')
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\SignupController.php(46): App\Models\UserModel->token_verify('37', '414d7af0ce03a84...')
+#5 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(919): App\Controllers\SignupController->token_verification()
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2023-10-18 07:49:39 --> Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 APPPATH\Models\UserModel.php(52): CodeIgniter\Database\BaseConnection->query('UPDATE users SET verified_user = 1 WHERE id = 37 AND token LIKE \'414d7af0ce03a8465416f5c0f1ac4bfb\'')
+ 2 APPPATH\Controllers\SignupController.php(46): App\Models\UserModel->token_verify('37', '414d7af0ce03a8465416f5c0f1ac4bfb')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->token_verification()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+ERROR - 2023-10-18 07:49:41 --> mysqli_sql_exception: Unknown column 'id' in 'where clause' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE users SE...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE users SE...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE users SE...')
+#3 C:\xampp\htdocs\codeigniter\app\Models\UserModel.php(52): CodeIgniter\Database\BaseConnection->query('UPDATE users SE...')
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\SignupController.php(46): App\Models\UserModel->token_verify('37', '414d7af0ce03a84...')
+#5 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(919): App\Controllers\SignupController->token_verification()
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2023-10-18 07:49:41 --> Unknown column 'id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 APPPATH\Models\UserModel.php(52): CodeIgniter\Database\BaseConnection->query('UPDATE users SET verified_user = 1 WHERE id = 37 AND token LIKE \'414d7af0ce03a8465416f5c0f1ac4bfb\'')
+ 2 APPPATH\Controllers\SignupController.php(46): App\Models\UserModel->token_verify('37', '414d7af0ce03a8465416f5c0f1ac4bfb')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->token_verification()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
