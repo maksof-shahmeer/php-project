@@ -57,6 +57,7 @@ class UserModel extends Model
         $sql = "UPDATE users SET token = null WHERE user_id = '$user_id' AND token LIKE '$user_token'";
         return $db->query($sql);
     }
+    
 
 }
 

@@ -87,61 +87,29 @@ button:hover{
 }
 .login{
 	height: 550px;
-	background: #eee;
-	border-radius: 60% / 10%;
-	transform: translateY(-500px);
+	background: #302b63;
 	transition: .8s ease-in-out;
 	text-align: center;
 }
-.login label{
-	color: #573b8a;
-	transform: scale(1);
+.login label {
+    color : black;
 }
-.signup label{
-	transform: scale(0.6);
-}
-
-#chk:checked ~ .login{
-	transform: translateY(-175px);
-}
-#chk:checked ~ .login label{
-	transform: scale(0.6);	
-}
-#chk:checked ~ .signup label{
-	transform: scale(1);
-}
-
 </style>
 </head>
 <body>
 	<div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true">
 
-			<div class="signup">
-			
-			<form action="<?= base_url('/signup') ?>" method='post'>
-			<?= csrf_field(); ?>
-					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" >
-					<input type="email" name="signemail" placeholder="Email" >
-					<?php 
-					
-					// if(session()->has('error')){
-					// 	echo "<span class='error-message'>" . session()->getFlashdata('error') . "</span>";
-					// };
-					?>
-					<input type="password" name="pswd" placeholder="Password" >
-					<input type="password" name="confirmpswd" placeholder="Confirm Password" >
-					<button>Sign up</button>
-					<div style="display:flex; justify-content:center;">
-						<a href="<?= base_url('/') ?>" style="color:white ; justify-content:center;">Log in</a>
-					</div>
+			<div class="login">
+			<form action="<?= base_url('/dashboard') ?>" method='post'>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="loginpswd" placeholder="Password" required="">
+					<button>Login</button><br>
+					<a href="http://" style="color:white">Forget Password</a><br><br>
+					<a href="<?= site_url('/sign-up') ?>" style="color:white">Create a new account</a>
+
 				</form>
-			</div>
-
-			
-			</div>
-	</div>
+    
 </body>
 </html>
 <!-- partial -->

@@ -15,7 +15,7 @@ class DashboardController extends BaseController
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('loginpswd');
         $result = $users->where('email', $email)->first(); 
-        if($result->user_id > 0) {
+        if($result) {
             if(password_verify($password, $result['password_hash'])) {
                 return view('forms/dashboard.php', $data);
             } 

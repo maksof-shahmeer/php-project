@@ -6,33 +6,27 @@ use App\Models\UserModel;
 use codeIgniter\Controller;
 class SignupController extends BaseController
 {
-    public function index() 
-    { 
-        $users = new UserModel();
-        $username = isset($_POST['txt']) ? $_POST['txt'] : '';
-        $email = isset($_POST['signemail']) ? $_POST['signemail'] : '';
-        $password = isset($_POST['pswd']) ? $_POST['pswd'] : '';
-        $password = isset($_POST['pswd']) ? $_POST['pswd'] : '';
-
-        $password_hash = password_hash($password, PASSWORD_BCRYPT);
-        $token = md5((string) $email);
-        $db_data = [
-            'username' => $username,
-            'email' => $email,
-            'password_hash' => $password_hash,
-            'token' => $token
-        ];
-        $users->insert($db_data);
-        
-        $user = $users->get_user_by_email($email);
-
-
-
-        return view('forms/confirmemail.php',['token'=>$token, 'user_id'=> $user->user_id ]);
-        // print_r($user);
-        
-
+    public function validation() 
+    {
+        $validation = $this->validate([
+            'txt' => 'required',
+            'email' => 'required|valid_email|is_unique[users.email]',
+            'pwsd'=>'required|min_length[8]|max_length[20]',
+            'confirmpswd'=>'required|min_length[8]|max_length[20]|matches[password]'
+        ]);
+        if(!$validation){
+            return view('', ['validation' => $this->validator]);
+        }
+        else{
+            return view('forms/index.php');
+        }
     }
+
+
+
+
+    
+    
 
     public function token_verification() {
         $users = new UserModel();
