@@ -43,7 +43,13 @@
 	width:100%;
 	height: 100%;
 }
-label{
+label {
+	font-size: 12px;
+	color: red;
+	margin: 0px;
+}
+
+.login-heading{
 	color: #fff;
 	font-size: 2.3em;
 	justify-content: center;
@@ -59,7 +65,9 @@ input{
 	background: #e0dede;
 	justify-content: center;
 	display: flex;
-	margin: 20px auto;
+	margin-left: 60px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 	padding: 10px;
 	border: none;
 	outline: none;
@@ -91,9 +99,6 @@ button:hover{
 	transition: .8s ease-in-out;
 	text-align: center;
 }
-.login label {
-    color : black;
-}
 </style>
 </head>
 <body>
@@ -101,12 +106,18 @@ button:hover{
 
 			<div class="login">
 			<form action="<?= base_url('/dashboard') ?>" method='post'>
-					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="loginpswd" placeholder="Password" required="">
+			<?= csrf_field(); ?>
+					<label for="chk" aria-hidden="true" class="login-heading">Login</label>
+					<input name="email" placeholder="Email" value="<?= set_value('email'); ?>">
+					<label class="text-danger"><?= isset($validation) ? display_error($validation,'email') : '' ?> </label>
+					<input type="password" name="loginpswd" placeholder="Password" value="<?= set_value('loginpswd'); ?>">
+					<?php if(!empty(session()->getFlashdata('fail'))): ?>
+					<label class="text-danger"><?= isset($validation) ? display_error($validation,'loginpswd') : '' ?> </label>
+					<label> <?php  session()->getFlashdata('fail'); ?> </label>
+					<?php endif; ?>
 					<button>Login</button><br>
 					<a href="http://" style="color:white">Forget Password</a><br><br>
-					<a href="<?= site_url('/sign-up') ?>" style="color:white">Create a new account</a>
+					<a href="<?= site_url('/signup') ?>" style="color:white">Create a new account</a>
 
 				</form>
     

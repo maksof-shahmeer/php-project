@@ -43,7 +43,7 @@
 	width:100%;
 	height: 100%;
 }
-label{
+.signup-label{
 	color: #fff;
 	font-size: 2.3em;
 	justify-content: center;
@@ -53,13 +53,16 @@ label{
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
+
 input{
 	width: 60%;
 	height: 20px;
 	background: #e0dede;
-	justify-content: center;
 	display: flex;
-	margin: 20px auto;
+	justify-content: center;
+	margin-left: 60px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	padding: 10px;
 	border: none;
 	outline: none;
@@ -98,17 +101,20 @@ button:hover{
 	transform: scale(1);
 }
 .signup label{
-	transform: scale(0.6);
+	transform: scale(1);
 }
 
-#chk:checked ~ .login{
-	transform: translateY(-175px);
+span {
+	display: inline;
+
 }
-#chk:checked ~ .login label{
-	transform: scale(0.6);	
-}
-#chk:checked ~ .signup label{
-	transform: scale(1);
+label {
+	margin: 0 auto;
+	margin-left: 60px;
+	height: 0px;
+	padding: 0px;
+	font-size: 15px;
+	color: red;
 }
 
 </style>
@@ -121,17 +127,15 @@ button:hover{
 			
 			<form action="<?= base_url('/signup') ?>" method='post'>
 			<?= csrf_field(); ?>
-					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" >
-					<input type="email" name="signemail" placeholder="Email" >
-					<?php 
-					
-					// if(session()->has('error')){
-					// 	echo "<span class='error-message'>" . session()->getFlashdata('error') . "</span>";
-					// };
-					?>
-					<input type="password" name="pswd" placeholder="Password" >
-					<input type="password" name="confirmpswd" placeholder="Confirm Password" >
+					<label for="chk" aria-hidden="true" class="signup-label">Sign up</label>
+					<input type="text" name="username" placeholder="User name" value="<?= set_value('username'); ?>" >
+					<label class="text-danger"><?= isset($validation) ? display_error($validation,'username') : '' ?> </label>
+					<input type="text" name="email" placeholder="Email" value="<?= set_value('email'); ?>">
+					<label class="text-danger"><?= isset($validation) ? display_error($validation,'email') : '' ?> </label>
+					<input type="password" name="password_hash" placeholder="Password" value="<?= set_value('password_hash'); ?>">
+					<label class="text-danger"><?= isset($validation) ? display_error($validation,'password_hash') : '' ?> </label>
+					<input type="password" name="confirmpswd" placeholder="Confirm Password" value="<?= set_value('confirmpswd'); ?>">
+					<label class="text-danger"><?= isset($validation) ? display_error($validation,'confirmpswd') : '' ?> </label>
 					<button>Sign up</button>
 					<div style="display:flex; justify-content:center;">
 						<a href="<?= base_url('/') ?>" style="color:white ; justify-content:center;">Log in</a>
@@ -143,6 +147,7 @@ button:hover{
 			</div>
 	</div>
 </body>
+
 </html>
 <!-- partial -->
   

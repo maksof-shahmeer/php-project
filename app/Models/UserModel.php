@@ -49,12 +49,14 @@ class UserModel extends Model
     public function token_verify($user_id, $user_token) {
         $db = \Config\Database::connect();
         $sql = "UPDATE users SET verified_user = 1 WHERE user_id = '$user_id' AND token LIKE '$user_token'";
+        // return $sql;
         return $db->query($sql);
         
     }
     public function removing_token($user_id, $user_token) {
         $db = \Config\Database::connect();
         $sql = "UPDATE users SET token = null WHERE user_id = '$user_id' AND token LIKE '$user_token'";
+        // return $sql;
         return $db->query($sql);
     }
     

@@ -369,7 +369,7 @@ background: -webkit-linear-gradient(45deg, #cbcaa5, #acb6e5);
                                 <table border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="<?= base_url('/verify_token?token='.$token .'&user_id=' . $user_id) ?>" >confirm email</a> </td>
+                                      <td> <a href="<?= base_url('/verify_token?token='.$token . "&user_id=" . $user_id) ?>" >confirm email</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>
