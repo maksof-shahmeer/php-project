@@ -105,18 +105,25 @@ button:hover{
 	<div class="main">  	
 
 			<div class="login">
-			<form action="<?= base_url('/dashboard') ?>" method='post'>
+			<label> <?php echo session()->get('token_error'); ?></label>
+			<form action="<?= base_url('/sign-in') ?>" method='post'>
 			<?= csrf_field(); ?>
 					<label for="chk" aria-hidden="true" class="login-heading">Login</label>
 					<input name="email" placeholder="Email" value="<?= set_value('email'); ?>">
 					<label class="text-danger"><?= isset($validation) ? display_error($validation,'email') : '' ?> </label>
+					<?php if(!empty(session()->getFlashdata('not_verified'))): ?>
+					<label> <?php  echo session()->getFlashdata('not_verified'); ?> </label>
+					<?php endif; ?>
+					<?php if(!empty(session()->getFlashdata('alreadyLoggedIn'))): ?>
+					<label> <?php  echo session()->get('alreadyLoggedIn'); ?> </label>
+					<?php endif; ?>
 					<input type="password" name="loginpswd" placeholder="Password" value="<?= set_value('loginpswd'); ?>">
-					<?php if(!empty(session()->getFlashdata('fail'))): ?>
 					<label class="text-danger"><?= isset($validation) ? display_error($validation,'loginpswd') : '' ?> </label>
-					<label> <?php  session()->getFlashdata('fail'); ?> </label>
+					<?php if(!empty(session()->getFlashdata('fail'))): ?>
+					<label> <?php  echo session()->getFlashdata('fail'); ?> </label>
 					<?php endif; ?>
 					<button>Login</button><br>
-					<a href="http://" style="color:white">Forget Password</a><br><br>
+					<a href="<?= base_url('/reset-password')?>" style="color:white">Forget Password</a><br><br>
 					<a href="<?= site_url('/signup') ?>" style="color:white">Create a new account</a>
 
 				</form>

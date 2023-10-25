@@ -70,6 +70,7 @@ class SignupController extends BaseController
                     return redirect()->back()->with('fail', 'Something went wrong');
                 } else {
                     $last_id = $usersModel->insertID();
+                    session()->set('confirm_email_access', true);
                     session()->set('loggedUser', $last_id);
                     session()->set('token', $token);
                     return redirect()->to('/confirm_email');
@@ -89,7 +90,8 @@ class SignupController extends BaseController
         $user_id = isset($user_id) ? $user_id : '';
         $result = $users->where('user_id', $user_id)->first();
         $res1 = $users->token_verify($user_id, $user_token);
-        $res2 = $users->removing_token($user_id, $user_token);
+        $res2 = $users->removing_token($user_id, $token);
+        // $res3 = $users->token_verify($user_id, $user_token);
         return redirect()->to('/');
     }
 }

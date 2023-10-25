@@ -11,6 +11,10 @@ use CodeIgniter\Filters\SecureHeaders;
 
 class Filters extends BaseConfig
 {
+    public $filters = [
+        'accessControl' => \App\Filters\AccessControlFilter::class,
+    ];
+    
     /**
      * Configures aliases for Filter classes to
      * make reading things nicer and simpler.
@@ -24,6 +28,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        
     ];
 
     /**
@@ -66,5 +71,4 @@ class Filters extends BaseConfig
      * Example:
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
-    public array $filters = [];
 }
